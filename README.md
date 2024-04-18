@@ -10,3 +10,30 @@ xenserver_to_xen
 
 3. If you'd like to convert `{image}.img` to `{image}.qcow2`, you can run the command:
 >    qemu-img convert -f raw -O qcow2 {image}.img {image}.qcow2
+>
+
+### Comandos rápidos
+
+```
+wget https://raw.githubusercontent.com/davinunes/xenserver_to_xen/master/xenmigrate.py
+
+    mkdir blue
+    tar -xvf  blueiris.xva -C blue/
+    ll
+    ll
+    rm blueiris.xva
+    cd blue/
+    ll
+    qm disk import  103 bluiris_disco1.img LVM-2T
+    ll
+    python3 /opt/xenmigrate.py --convert=Ref:180 bluiris_disco1.img
+    python3 /opt/xenmigrate.py --convert=Ref:177 bluiris_disco0.img
+    ll
+    rm -rf Ref:177 Ref:180
+    ll
+    rm ova.xml
+    qm disk import  103 bluiris_disco1.img LVM-2T
+    qm disk import  103 bluiris_disco0.img LVM-2T
+    ll
+    rm bluiris_disco0.img bluiris_disco1.img
+```
